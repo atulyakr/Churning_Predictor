@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Predictor</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='result.css')}}">
+
+     <!-- stylsheet for animation -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <section id="whole">
+        <section id="heading">
+            <h1 id="heading" data-aos="fade-left">Welcome to Churn predictor</h1>
+            <h3 id="subheader "data-aos="fade-right">Get to know know whether people will get continue to be subscribed to your company's services or not</h3>
+            </section>
+    
+            <section id="content_part" data-aos="fade-down">
+                <form id="form1" action="/output" method="POST">
+                    <label for="age"data-aos="fade-right">AGE  </label> 
+                    <input type="text" id="age" class="text" data-aos="fade-left" >
+                    <br><br>
+        
+                    <label for="sub_length" data-aos="fade-right">Subscription length   </label> 
+                    <input type="text" id="sub_length" class="text" data-aos="fade-left" ><br><br>
+        
+                    <label for="monthly_bill" data-aos="fade-right" >Monthly  Bill </label> 
+                    <input type="text" id="monthly_bill" data-aos="fade-left" class="text" ><br><br>
+        
+                    <label for="total_usage" data-aos="fade-right">Total Usage in GB  </label> 
+                    <input type="text" id="total_usage" class="text" data-aos="fade-left" >
+                    <br><br>
+        
+                    <div id="genderform" data-aos="fade-right">
+                        <label>Gender   </label>
+                        <input type="radio" id="male" value="1" name="Gender" >
+                        <label for="male">Male </label>
+                        <input type="radio" id="female" value="0" name="Gender" >
+                        <label for="female">Female  </label><br><br>
+                    </div>
+        
+        
+                    <div id="Cityform" data-aos="fade-right">
+                        <label>City   </label>
+                        
+                        <input type="radio" id="chicago" name="city" value="1000" >
+                        <label for="chicago">Chicago </label>
+        
+                        <input type="radio" id="los_angeles" name="city" value="0100" >
+                        <label for="los_angeles">Los Angles  </label>
+        
+                        <input type="radio" id="miami" name="city" value="0010" >
+                        <label for="miami">Miami</label>
+        
+                        <input type="radio" id="newyork" name="city" value="0001" >
+                        <label for="newyork">New York</label>
+        
+                        <input type="radio" id="houston" name="city" value="0000" >
+                        <label for="houston">Houston  </label>
+                    </div>
+                    <br><br>
+                    <input type="submit" id="submit_btn"  onclick="predictor()" value="Submit" >
+                </form>
+        <div id="prediction" >
+            <p id="result"> And the result is ..........  </p>
+        <div>
+        </section>
+    </section>
+    <script type="text/javascript" src="{{url_for('static',filename='result.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+      <!-- our aos data -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+      AOS.init({
+          offset: 300,
+          duration: 1300,
+      });
+      </script>
+</body>
+</html>
